@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'RELL SEAS Codes & Devil Fruit Tier List (August 2026)',
     description: 'Get free Spins, Beli, and Stat Resets in Roblox RELL SEAS with daily updated codes.',
     type: 'website',
-    url: 'https://rell-seas-wiki.vercel.app',
+    url: 'https://rellseas.robloxwikihub.com',
   },
 };
 

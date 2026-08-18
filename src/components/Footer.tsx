@@ -21,9 +21,9 @@ export const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-yellow-300 font-semibold text-sm mb-2">Roblox Wiki Matrix</h4>
-            <p className="text-xs text-gray-400">
-              Part of the 8-site SEO network powering active gaming communities on Roblox.
+            <h4 className="text-yellow-300 font-semibold text-sm mb-2">Community Disclaimer</h4>
+            <p className="text-xs text-gray-400 leading-relaxed">
+              Unofficial fan-made wiki created for Roblox RELL SEAS players. All game assets belong to RELL Games and their respective creators.
             </p>
           </div>
         </div>

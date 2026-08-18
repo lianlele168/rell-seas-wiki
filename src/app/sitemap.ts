@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://rell-seas-wiki.vercel.app';
+  const baseUrl = 'https://rellseas.robloxwikihub.com';
 
   return [
     {

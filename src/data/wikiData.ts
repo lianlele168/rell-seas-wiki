@@ -17,7 +17,7 @@ export const GAME_INFO = {
   title: "RELL SEAS Wiki",
   subtitle: "Official Fan-Made Community Wiki for Roblox RELL SEAS (One Piece RPG)",
   description: "The ultimate community database for RELL SEAS on Roblox. Get active codes, Devil Fruit tier lists, Haki unlock guides, and island navigation maps.",
-  url: "https://rell-seas-wiki.vercel.app",
+  url: "https://rellseas.robloxwikihub.com",
   stats: [
     { label: "Developer", value: "RELL Games (Shindo Life Creators)" },
     { label: "Platform", value: "Roblox (PC, Mobile, Console)" },
