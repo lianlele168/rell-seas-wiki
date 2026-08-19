@@ -1,9 +1,8 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { Sparkles, Dices, Trophy, RefreshCw, Layers, ShieldAlert, Zap, X, RotateCw } from 'lucide-react';
+import { Sparkles, Dices, Trophy, RefreshCw, Layers, X, Star } from 'lucide-react';
 import { DEVIL_FRUITS, FruitData } from '@/data/wikiData';
 
 const COMMON_FRUITS: FruitData[] = [
@@ -13,12 +12,25 @@ const COMMON_FRUITS: FruitData[] = [
     type: 'Paramecia',
     rarity: 'Common',
     dropRate: '35.0%',
-    image: '/fruit-gacha.png',
+    image: '/bomb-fruit.png',
     description: 'Explosive body parts dealing minor damage.',
     skills: [{ key: 'Z', name: 'Explosive Booger', mastery: 1, description: 'Fires explosive projectile.' }],
     dps: 60,
     defense: 50,
     mobility: 50
+  },
+  {
+    id: 'ice',
+    name: 'Hie-Hie Fruit (Ice)',
+    type: 'Logia',
+    rarity: 'Rare',
+    dropRate: '5.0%',
+    image: '/ice-fruit.png',
+    description: 'Freeze ocean water and turn body into solid ice.',
+    skills: [{ key: 'Z', name: 'Ice Saber', mastery: 1, description: 'Slashes with ice blade.' }],
+    dps: 88,
+    defense: 90,
+    mobility: 80
   },
   {
     id: 'chop',
@@ -50,7 +62,7 @@ const COMMON_FRUITS: FruitData[] = [
 
 const ALL_GACHA_POOL: FruitData[] = [...DEVIL_FRUITS, ...COMMON_FRUITS];
 
-// Web Audio API Synthesizer for Genshin-style wish sound effects
+// Web Audio Synthesizer
 class SoundEngine {
   ctx: AudioContext | null = null;
 
@@ -72,7 +84,6 @@ class SoundEngine {
     gain.connect(this.ctx.destination);
 
     if (rarity === 'Mythical') {
-      // Golden 5-Star sound: Sweep up with chord resonance
       osc.type = 'triangle';
       osc.frequency.setValueAtTime(220, now);
       osc.frequency.exponentialRampToValueAtTime(880, now + 1.2);
@@ -92,7 +103,6 @@ class SoundEngine {
       subOsc.start(now + 0.5);
       subOsc.stop(now + 2.0);
     } else if (rarity === 'Legendary') {
-      // Purple 4-Star sound
       osc.type = 'sine';
       osc.frequency.setValueAtTime(300, now);
       osc.frequency.exponentialRampToValueAtTime(600, now + 0.8);
@@ -100,7 +110,6 @@ class SoundEngine {
       gain.gain.linearRampToValueAtTime(0.2, now + 0.2);
       gain.gain.exponentialRampToValueAtTime(0.001, now + 1.5);
     } else {
-      // Blue 3-Star sound
       osc.type = 'sine';
       osc.frequency.setValueAtTime(400, now);
       osc.frequency.linearRampToValueAtTime(520, now + 0.5);
@@ -147,32 +156,26 @@ export default function SimulatorPage() {
 
   const rollFruit = (currentPity: number) => {
     let probMythical = 0.005; // 0.5% base
-    // Soft pity starting at 74th pull
     if (currentPity >= 74) {
       probMythical = 0.005 + (currentPity - 73) * 0.06;
     }
-    if (currentPity >= 90) probMythical = 1.0; // Hard pity
+    if (currentPity >= 90) probMythical = 1.0;
 
     const rand = Math.random();
 
     if (rand < probMythical) {
-      // Mythical Drop (Gold)
       const mythicals = ALL_GACHA_POOL.filter((f) => f.rarity === 'Mythical');
       return mythicals[Math.floor(Math.random() * mythicals.length)];
     } else if (rand < probMythical + 0.02) {
-      // Legendary Drop (Purple)
       const legendaries = ALL_GACHA_POOL.filter((f) => f.rarity === 'Legendary');
       return legendaries[Math.floor(Math.random() * legendaries.length)];
     } else if (rand < probMythical + 0.07) {
-      // Rare Drop (Blue)
       const rares = ALL_GACHA_POOL.filter((f) => f.rarity === 'Rare');
       return rares[Math.floor(Math.random() * rares.length)];
     } else if (rand < probMythical + 0.29) {
-      // Uncommon Drop
       const uncommons = ALL_GACHA_POOL.filter((f) => f.rarity === 'Uncommon');
       return uncommons[Math.floor(Math.random() * uncommons.length)];
     } else {
-      // Common Drop
       const commons = ALL_GACHA_POOL.filter((f) => f.rarity === 'Common');
       return commons[Math.floor(Math.random() * commons.length)];
     }
@@ -195,7 +198,7 @@ export default function SimulatorPage() {
     soundEngine.playMeteorSound(highestRarity);
 
     let startTime = performance.now();
-    const duration = 2200; // 2.2s meteor flight
+    const duration = 2200;
 
     let tailColor = highestRarity === 'Mythical' ? '#f7cf68' : highestRarity === 'Legendary' ? '#bf86fd' : '#4cbcf6';
     let coreColor = highestRarity === 'Mythical' ? '#ffffff' : tailColor;
@@ -206,11 +209,9 @@ export default function SimulatorPage() {
 
       ctx!.clearRect(0, 0, canvas!.width, canvas!.height);
 
-      // Cosmic background overlay
       ctx!.fillStyle = `rgba(6, 14, 26, ${Math.min(progress * 2, 0.95)})`;
       ctx!.fillRect(0, 0, canvas!.width, canvas!.height);
 
-      // Meteor trajectory calculation
       const startX = -100;
       const startY = -100;
       const endX = canvas!.width + 200;
@@ -219,7 +220,6 @@ export default function SimulatorPage() {
       const curX = startX + (endX - startX) * progress;
       const curY = startY + (endY - startY) * progress;
 
-      // Meteor trail gradient
       const gradient = ctx!.createLinearGradient(curX, curY, curX - 300, curY - 300);
       gradient.addColorStop(0, coreColor);
       gradient.addColorStop(0.3, tailColor);
@@ -233,7 +233,6 @@ export default function SimulatorPage() {
       ctx!.lineTo(curX - 350, curY - 350);
       ctx!.stroke();
 
-      // Glowing star core
       ctx!.fillStyle = coreColor;
       ctx!.shadowColor = tailColor;
       ctx!.shadowBlur = highestRarity === 'Mythical' ? 40 : 20;
@@ -242,7 +241,6 @@ export default function SimulatorPage() {
       ctx!.fill();
       ctx!.shadowBlur = 0;
 
-      // Golden shockwave explosion at climax
       if (progress > 0.85 && highestRarity === 'Mythical') {
         const flashAlpha = (progress - 0.85) / 0.15;
         ctx!.fillStyle = `rgba(247, 207, 104, ${flashAlpha * 0.85})`;
@@ -280,7 +278,6 @@ export default function SimulatorPage() {
 
     setPity(tempPity);
 
-    // Highest rarity calculation
     const hasMythical = rolledResults.some((r) => r.rarity === 'Mythical');
     const hasLegendary = rolledResults.some((r) => r.rarity === 'Legendary');
     const highestRarity = hasMythical ? 'Mythical' : hasLegendary ? 'Legendary' : 'Rare';
@@ -315,6 +312,52 @@ export default function SimulatorPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 relative">
+      {/* Scoped CSS for 3D Card Flip without Text Mirroring */}
+      <style jsx global>{`
+        .gacha-card-scene {
+          perspective: 1000px;
+        }
+        .gacha-card-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+          transform-style: preserve-3d;
+        }
+        .gacha-card-inner.is-flipped {
+          transform: rotateY(180deg);
+        }
+        .gacha-card-face {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          border-radius: 1.25rem;
+          overflow: hidden;
+        }
+        .gacha-card-front {
+          /* Face Down (Cover) */
+          transform: rotateY(0deg);
+          z-index: 2;
+        }
+        .gacha-card-back {
+          /* Revealed Fruit Details */
+          transform: rotateY(180deg);
+        }
+
+        /* Gold Rays Rotation */
+        @keyframes raySpin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-ray-spin {
+          animation: raySpin 15s linear infinite;
+        }
+      `}</style>
+
       {/* Canvas Fullscreen Animation Overlay */}
       <canvas
         ref={animCanvasRef}
@@ -376,21 +419,21 @@ export default function SimulatorPage() {
           {/* Featured Showcase Fruit Graphics */}
           <div className="grid grid-cols-3 gap-4 max-w-md mx-auto my-4">
             <div className="p-3 rounded-2xl bg-slate-950/80 border border-yellow-500/40 text-center space-y-2">
-              <div className="w-16 h-16 mx-auto relative rounded-xl overflow-hidden border border-yellow-400">
+              <div className="w-16 h-16 mx-auto relative rounded-xl overflow-hidden border border-yellow-400 shadow-lg shadow-yellow-500/20">
                 <Image src="/mochi-fruit.png" alt="Mochi Fruit" fill className="object-cover" />
               </div>
               <span className="text-[10px] font-bold text-yellow-400 block">Mochi (5★)</span>
             </div>
 
             <div className="p-3 rounded-2xl bg-slate-950/80 border border-cyan-500/40 text-center space-y-2">
-              <div className="w-16 h-16 mx-auto relative rounded-xl overflow-hidden border border-cyan-400">
+              <div className="w-16 h-16 mx-auto relative rounded-xl overflow-hidden border border-cyan-400 shadow-lg shadow-cyan-500/20">
                 <Image src="/dragon-fruit.png" alt="Dragon Fruit" fill className="object-cover" />
               </div>
               <span className="text-[10px] font-bold text-cyan-400 block">Dragon (5★)</span>
             </div>
 
             <div className="p-3 rounded-2xl bg-slate-950/80 border border-purple-500/40 text-center space-y-2">
-              <div className="w-16 h-16 mx-auto relative rounded-xl overflow-hidden border border-purple-400">
+              <div className="w-16 h-16 mx-auto relative rounded-xl overflow-hidden border border-purple-400 shadow-lg shadow-purple-500/20">
                 <Image src="/magma-fruit.png" alt="Magma Fruit" fill className="object-cover" />
               </div>
               <span className="text-[10px] font-bold text-purple-400 block">Magma (4★)</span>
@@ -515,62 +558,104 @@ export default function SimulatorPage() {
             </button>
           </div>
 
-          {/* Cards Grid */}
+          {/* 10-Wish 3D Cards Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 sm:gap-6 my-auto max-w-6xl mx-auto w-full">
             {lastRolledBatch.map((item, idx) => {
               const isFlipped = flippedCards[idx];
-              const isGold = item.rarity === 'Mythical';
-              const isPurple = item.rarity === 'Legendary';
+              const isMythical = item.rarity === 'Mythical';
+              const isLegendary = item.rarity === 'Legendary';
+              const isRare = item.rarity === 'Rare';
+
+              const starCount = isMythical ? 5 : isLegendary ? 4 : isRare ? 3 : 2;
 
               return (
                 <div
                   key={idx}
                   onClick={() => handleFlipCard(idx)}
-                  className="h-64 sm:h-72 w-full cursor-pointer relative group perspective-1000"
+                  className="gacha-card-scene h-72 sm:h-80 w-full cursor-pointer relative group"
                 >
-                  <div
-                    className={`w-full h-full relative duration-700 transition-all transform-style-3d ${
-                      isFlipped ? 'rotate-y-180' : ''
-                    }`}
-                  >
-                    {/* Card Front (Face-down) */}
-                    <div className="absolute inset-0 backface-hidden rounded-2xl bg-gradient-to-b from-[#091527] to-[#040a14] border-2 border-yellow-500/40 flex flex-col items-center justify-center p-4 shadow-xl">
-                      <Sparkles className="w-10 h-10 text-yellow-400 animate-pulse" />
-                      <span className="font-mono text-xs text-yellow-300 font-bold mt-3">WISH #{idx + 1}</span>
+                  <div className={`gacha-card-inner ${isFlipped ? 'is-flipped' : ''}`}>
+                    
+                    {/* CARD FRONT (Face-down Cover - Non Mirrored!) */}
+                    <div className="gacha-card-face gacha-card-front bg-gradient-to-b from-[#091527] to-[#040a14] border-2 border-yellow-500/40 flex flex-col items-center justify-center p-4 shadow-xl">
+                      <div className="w-12 h-12 rounded-full bg-yellow-500/10 border border-yellow-500/40 flex items-center justify-center mb-3">
+                        <Sparkles className="w-6 h-6 text-yellow-400 animate-pulse" />
+                      </div>
+                      <span className="font-mono text-xs text-yellow-300 font-bold">WISH #{idx + 1}</span>
                       <span className="text-[10px] text-gray-500 mt-1">Click to reveal</span>
                     </div>
 
-                    {/* Card Back (Revealed item) */}
+                    {/* CARD BACK (Revealed Fruit Card - Genshin High-Fidelity Style!) */}
                     <div
-                      className={`absolute inset-0 backface-hidden rotate-y-180 rounded-2xl p-4 flex flex-col justify-between text-center border-2 shadow-2xl ${
-                        isGold
-                          ? 'bg-gradient-to-b from-amber-950 via-[#060e1a] to-[#040a14] border-yellow-400 shadow-yellow-500/30'
-                          : isPurple
-                          ? 'bg-gradient-to-b from-purple-950 via-[#060e1a] to-[#040a14] border-purple-400 shadow-purple-500/30'
-                          : 'bg-gradient-to-b from-cyan-950 via-[#060e1a] to-[#040a14] border-cyan-700'
+                      className={`gacha-card-face gacha-card-back flex flex-col justify-between p-4 border-2 shadow-2xl relative ${
+                        isMythical
+                          ? 'bg-gradient-to-b from-[#3a2507] via-[#12182b] to-[#050814] border-yellow-400 shadow-yellow-500/50'
+                          : isLegendary
+                          ? 'bg-gradient-to-b from-[#2d1145] via-[#12182b] to-[#050814] border-purple-400 shadow-purple-500/50'
+                          : 'bg-gradient-to-b from-[#0c2e42] via-[#12182b] to-[#050814] border-cyan-500 shadow-cyan-500/30'
                       }`}
                     >
-                      <div className="flex justify-between items-center text-[10px] font-mono">
-                        <span className="text-gray-300">{item.type}</span>
-                        <span
-                          className={`font-bold px-2 py-0.5 rounded ${
-                            isGold ? 'bg-yellow-500 text-slate-950' : isPurple ? 'bg-purple-600 text-white' : 'bg-cyan-600 text-white'
+                      {/* Rotating Gold Ray Effect for 5-Star Mythicals */}
+                      {isMythical && (
+                        <div className="absolute inset-0 opacity-20 pointer-events-none flex items-center justify-center overflow-hidden">
+                          <div className="w-64 h-64 bg-gradient-to-r from-yellow-500 to-amber-200 rounded-full blur-xl animate-ray-spin" />
+                        </div>
+                      )}
+
+                      {/* Header Badge & Stars */}
+                      <div className="relative z-10 flex justify-between items-center text-[10px] font-mono">
+                        <span className="text-gray-300 font-bold uppercase">{item.type}</span>
+                        <div className="flex items-center text-yellow-400">
+                          {Array.from({ length: starCount }).map((_, s) => (
+                            <Star key={s} className="w-3 h-3 fill-yellow-400 stroke-none" />
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Center Fruit High-Res Portrait */}
+                      <div className="relative z-10 my-auto text-center space-y-3">
+                        <div
+                          className={`w-24 h-24 mx-auto relative rounded-2xl overflow-hidden border-2 shadow-2xl ${
+                            isMythical
+                              ? 'border-yellow-300 ring-4 ring-yellow-500/30 shadow-yellow-500/60 scale-105'
+                              : isLegendary
+                              ? 'border-purple-300 ring-4 ring-purple-500/30 shadow-purple-500/50'
+                              : 'border-cyan-400 shadow-cyan-500/30'
                           }`}
                         >
-                          {item.rarity}
-                        </span>
-                      </div>
-
-                      {/* Fruit Graphic */}
-                      <div className="my-auto space-y-2">
-                        <div className="w-20 h-20 mx-auto relative rounded-2xl overflow-hidden border border-yellow-500/50 shadow-lg">
                           <Image src={item.image} alt={item.name} fill className="object-cover" />
                         </div>
-                        <h4 className="font-extrabold text-white text-xs sm:text-sm leading-tight">{item.name}</h4>
+
+                        <div className="space-y-1">
+                          <h4
+                            className={`font-black text-xs sm:text-sm tracking-tight leading-tight ${
+                              isMythical
+                                ? 'text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-amber-300 to-yellow-500'
+                                : isLegendary
+                                ? 'text-purple-200'
+                                : 'text-white'
+                            }`}
+                          >
+                            {item.name}
+                          </h4>
+                          <span
+                            className={`inline-block px-2 py-0.5 rounded text-[9px] font-mono font-bold ${
+                              isMythical
+                                ? 'bg-yellow-400 text-slate-950'
+                                : isLegendary
+                                ? 'bg-purple-600 text-white'
+                                : 'bg-cyan-600 text-white'
+                            }`}
+                          >
+                            {item.rarity} ({item.dropRate})
+                          </span>
+                        </div>
                       </div>
 
-                      <div className="pt-2 border-t border-cyan-900/30 text-[10px] font-mono text-cyan-300">
-                        DPS: {item.dps} | DEF: {item.defense}
+                      {/* Footer Stats Bar */}
+                      <div className="relative z-10 pt-2 border-t border-yellow-500/20 flex justify-between items-center text-[10px] font-mono text-gray-300">
+                        <span>DPS: <strong className="text-yellow-400">{item.dps}</strong></span>
+                        <span>DEF: <strong className="text-cyan-400">{item.defense}</strong></span>
                       </div>
                     </div>
                   </div>

@@ -165,7 +165,7 @@ export const DEVIL_FRUITS: FruitData[] = [
     type: "Logia",
     rarity: "Rare",
     dropRate: "5.0%",
-    image: "/fruit-gacha.png",
+    image: "/pika-fruit.png",
     description: "Light-speed mobility and explosive photon beams. Excellent for fast sea travel and farming.",
     skills: [
       { key: "Z", name: "Light Ray Kick", mastery: 1, description: "Teleports to enemy at light speed and delivers an explosive kick." },
@@ -184,7 +184,7 @@ export const DEVIL_FRUITS: FruitData[] = [
     type: "Paramecia",
     rarity: "Legendary",
     dropRate: "2.0%",
-    image: "/fruit-gacha.png",
+    image: "/gura-fruit.png",
     description: "Cracks atmosphere to unleash devastating shockwaves capable of capsizing enemy pirate ships.",
     skills: [
       { key: "Z", name: "Quake Punch", mastery: 1, description: "Shatters air with a heavy punch creating forward shockwaves." },
