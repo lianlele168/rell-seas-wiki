@@ -108,7 +108,7 @@ export const DEVIL_FRUITS: FruitData[] = [
     type: "Paramecia",
     rarity: "Mythical",
     dropRate: "0.5%",
-    image: "/fruit-gacha.png",
+    image: "/mochi-fruit.png",
     description: "Awakened Special Paramecia. Transform into sticky dough to dodge attacks, trap enemies, and unleash rapid barrage kicks.",
     skills: [
       { key: "Z", name: "Willow Mochi", mastery: 1, description: "Slams a giant spike dough hammer onto target area." },
@@ -127,7 +127,7 @@ export const DEVIL_FRUITS: FruitData[] = [
     type: "Logia",
     rarity: "Legendary",
     dropRate: "1.5%",
-    image: "/fruit-gacha.png",
+    image: "/magma-fruit.png",
     description: "Highest offensive DPS Logia fruit. Intangible body nullifies physical hits without Armament Haki.",
     skills: [
       { key: "Z", name: "Magma Fist", mastery: 1, description: "Launches a giant volcanic fist that explodes on contact." },
@@ -146,7 +146,7 @@ export const DEVIL_FRUITS: FruitData[] = [
     type: "Zoan",
     rarity: "Mythical",
     dropRate: "0.5%",
-    image: "/fruit-gacha.png",
+    image: "/dragon-fruit.png",
     description: "Transform into a legendary Azure Dragon with massive HP boosts, flight, and destructive elemental breaths.",
     skills: [
       { key: "Z", name: "Blast Breath", mastery: 1, description: "Unleashes a beam of pure fiery plasma across the battlefield." },
