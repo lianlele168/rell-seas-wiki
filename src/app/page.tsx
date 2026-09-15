@@ -17,11 +17,35 @@ import {
   Flame
 } from 'lucide-react';
 import StructuredData from '@/components/StructuredData';
+import AuthorCard from '@/components/AuthorCard';
 import { GAME_INFO, ACTIVE_CODES, DEVIL_FRUITS, FAQ_ITEMS } from '@/data/wikiData';
 
 export default function HomePage() {
   return (
     <div className="space-y-16 pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            dateModified: '2026-09-15',
+            author: {
+              '@type': 'Person',
+              name: 'Captain "Redhair" Miller',
+              jobTitle: 'Lead Grand Line Navigator & RELL SEAS Theorycrafter',
+            },
+            mainEntity: FAQ_ITEMS.map((item) => ({
+              '@type': 'Question',
+              name: item.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.answer,
+              },
+            })),
+          }),
+        }}
+      />
       <StructuredData faq={FAQ_ITEMS} />
 
       {/* Hero Section */}
@@ -221,6 +245,11 @@ export default function HomePage() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Author Card */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <AuthorCard />
       </section>
 
       {/* Game Stats Overview Table */}
