@@ -7,6 +7,9 @@ import StructuredData from '@/components/StructuredData';
 export const metadata = {
   title: 'RELL SEAS Beginner Leveling, Haki & Ship Building Guide (September 2026)',
   description: 'Complete guide to RELL SEAS on Roblox: Starter leveling routes, Armament and Observation Haki unlock quests, custom ship building mechanics, and sea beast gacha rates.',
+  alternates: {
+    canonical: '/guides',
+  },
 };
 
 const GUIDE_FAQS = [

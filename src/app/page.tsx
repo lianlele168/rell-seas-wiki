@@ -16,9 +16,16 @@ import {
   Anchor,
   Flame
 } from 'lucide-react';
+import type { Metadata } from 'next';
 import StructuredData from '@/components/StructuredData';
 import AuthorCard from '@/components/AuthorCard';
 import { GAME_INFO, ACTIVE_CODES, DEVIL_FRUITS, FAQ_ITEMS } from '@/data/wikiData';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function HomePage() {
   return (

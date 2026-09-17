@@ -3,8 +3,11 @@ import { Trophy, Zap, Shield } from 'lucide-react';
 import { TIER_LIST } from '@/data/wikiData';
 
 export const metadata = {
-  title: 'RELL SEAS Devil Fruit & Haki Tier List (August 2026)',
+  title: 'RELL SEAS Devil Fruit & Haki Tier List (September 2026)',
   description: 'Best Logia, Paramecia, Mythical Zoan Devil Fruits and Haki abilities ranked in Roblox RELL SEAS.',
+  alternates: {
+    canonical: '/tier-list',
+  },
 };
 
 export default function TierListPage() {
@@ -18,7 +21,7 @@ export default function TierListPage() {
           <span>Official Meta Ranking</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          RELL SEAS Devil Fruit & Haki Tier List (August 2026)
+          RELL SEAS Devil Fruit & Haki Tier List (September 2026)
         </h1>
         <p className="text-gray-400 text-sm mt-2">
           Rankings based on PvP combo potential, Boss Raid DPS, sea travel speed, and Haki synergy.
