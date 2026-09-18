@@ -36,7 +36,7 @@ export default function HomePage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            dateModified: '2026-09-15',
+
             author: {
               '@type': 'Person',
               name: 'Captain "Redhair" Miller',
@@ -226,7 +226,7 @@ export default function HomePage() {
               <ShieldAlert className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-white">Active Working Codes (August 2026)</h2>
+              <h2 className="text-xl font-bold text-white">Active Working Codes </h2>
               <p className="text-xs text-gray-400">Tested and verified daily</p>
             </div>
           </div>

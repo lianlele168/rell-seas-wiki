@@ -17,7 +17,7 @@ export const Header = () => {
               <span className="font-extrabold text-lg text-white tracking-wider flex items-center gap-1.5">
                 RELL SEAS <span className="text-xs px-2 py-0.5 bg-yellow-950/80 text-yellow-300 rounded-full border border-yellow-700/50">WIKI</span>
               </span>
-              <p className="text-[10px] text-gray-400 tracking-tight">August 2026 Interactive Database</p>
+              <p className="text-[10px] text-gray-400 tracking-tight"> Interactive Database</p>
             </div>
           </Link>
 

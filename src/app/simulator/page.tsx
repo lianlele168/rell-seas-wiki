@@ -6,7 +6,7 @@ import SimulatorClient from './SimulatorClient';
 import AuthorCard from '@/components/AuthorCard';
 
 export const metadata: Metadata = {
-  title: 'RELL SEAS Devil Fruit Gacha Simulator & Spin Rates (September 2026) | Roblox',
+  title: 'RELL SEAS Devil Fruit Gacha Simulator & Spin Rates | Roblox',
   description: 'Test your luck with the RELL SEAS Devil Fruit Spin Simulator. Real gacha odds (0.5% Mythical, 2% Legendary, 90-spin pity counter) with sound effects and batch rolls.',
   alternates: {
     canonical: '/simulator',
@@ -49,7 +49,7 @@ export default function SimulatorPage() {
         </div>
         <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-yellow-950/60 border border-yellow-800/50 text-yellow-300 text-xs font-semibold">
           <Dices className="w-3.5 h-3.5" />
-          <span>OFFICIAL DROP RATE REPLICA (SEPTEMBER 2026)</span>
+          <span>OFFICIAL DROP RATE REPLICA </span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
           RELL SEAS Devil Fruit Gacha Simulator
@@ -68,7 +68,6 @@ export default function SimulatorPage() {
         role="Gacha Rate Mathematician & Drop Logger"
         experience="1,000+ Verified Simulated Spins & Pity Log Analysis"
         patchVersion="Season 1 Launch Odds"
-        lastUpdated="September 2026"
         editorialNote="Drop probabilities are verified against RELL Games public disclosure tables: Mythical 0.5%, Legendary 2.0%, Rare 5.0%, Uncommon 22.5%, Common 70.0% with escalating pity starting at spin 74."
       />
 

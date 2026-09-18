@@ -7,7 +7,7 @@ import AuthorCard from '@/components/AuthorCard';
 import { DEVIL_FRUITS } from '@/data/wikiData';
 
 export const metadata: Metadata = {
-  title: 'RELL SEAS Devil Fruit Database & Skill Showcases (September 2026) | Roblox',
+  title: 'RELL SEAS Devil Fruit Database & Skill Showcases | Roblox',
   description: 'Complete database of Logia, Paramecia, and Mythical Zoan fruits in RELL SEAS. Explore movesets, cooldowns, mastery requirements, and drop rates.',
   alternates: {
     canonical: '/fruits',
@@ -53,7 +53,7 @@ export default function FruitsPage() {
         </div>
         <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-yellow-950/60 border border-yellow-800/50 text-yellow-300 text-xs font-semibold">
           <Zap className="w-3.5 h-3.5" />
-          <span>OFFICIAL FRUIT REPERTOIRE (SEPTEMBER 2026)</span>
+          <span>OFFICIAL FRUIT REPERTOIRE </span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
           RELL SEAS Devil Fruit Database & Skill Showcases
@@ -72,7 +72,6 @@ export default function FruitsPage() {
         role="RELL SEAS Devil Fruit Mastery Researcher"
         experience="400+ Hours Playtesting & Drop Rate Logging"
         patchVersion="Season 1 Balance Patch"
-        lastUpdated="September 2026"
         editorialNote="All fruit drop rates, damage scalings, and skill masteries are collected from live test realms and verified through server-side drop rate inspections."
       />
 

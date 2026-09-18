@@ -14,7 +14,7 @@ export default function AuthorCard({
   role = 'Lead Grand Line Navigator & RELL SEAS Theorycrafter',
   experience = '400+ Hours In-Game & Closed Beta Tester',
   patchVersion = 'Pre-Launch Public Build Verified',
-  lastUpdated = 'September 2026',
+  lastUpdated = '',
   editorialNote = 'All island coordinates, Devil Fruit drop mechanics, Haki quest steps, and ship durability formulas have been tested and verified across live test realms.',
 }: AuthorCardProps) {
   return (
@@ -41,9 +41,7 @@ export default function AuthorCard({
           <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-500/10 text-amber-300 border border-amber-500/20">
             ⚡ {patchVersion}
           </span>
-          <span className="text-xs text-gray-400">
-            Updated: <strong className="text-gray-200">{lastUpdated}</strong>
-          </span>
+          
         </div>
       </div>
 

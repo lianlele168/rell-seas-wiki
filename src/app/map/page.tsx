@@ -5,7 +5,7 @@ import { Compass, Anchor, Trophy, ShieldAlert, Sparkles, Navigation } from 'luci
 import { ISLANDS } from '@/data/wikiData';
 
 export const metadata: Metadata = {
-  title: 'RELL SEAS Map & First Sea Island Navigation (September 2026) | Roblox',
+  title: 'RELL SEAS Map & First Sea Island Navigation | Roblox',
   description: 'Complete map of RELL SEAS First Sea islands, level progression routes, world boss spawn locations, and rare weapon drop tables.',
   alternates: {
     canonical: '/map',

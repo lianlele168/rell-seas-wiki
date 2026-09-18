@@ -5,7 +5,7 @@ import AuthorCard from '@/components/AuthorCard';
 import StructuredData from '@/components/StructuredData';
 
 export const metadata = {
-  title: 'RELL SEAS Beginner Leveling, Haki & Ship Building Guide (September 2026)',
+  title: 'RELL SEAS Beginner Leveling, Haki & Ship Building Guide ',
   description: 'Complete guide to RELL SEAS on Roblox: Starter leveling routes, Armament and Observation Haki unlock quests, custom ship building mechanics, and sea beast gacha rates.',
   alternates: {
     canonical: '/guides',
@@ -54,7 +54,7 @@ export default function GuidesPage() {
         role='Lead Grand Line Navigator & RELL SEAS Theorycrafter'
         experience='400+ Hours In-Game & Closed Beta Tester'
         patchVersion='Pre-Launch Public Build v1.02'
-        lastUpdated='September 2026'
+        lastUpdated=''
         editorialNote='All island coordinates, Devil Fruit drop mechanics, Haki quest steps, and ship durability formulas have been tested and verified across live test realms.'
       />
 

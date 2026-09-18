@@ -5,7 +5,7 @@ import BuildPlannerClient from './BuildPlannerClient';
 import AuthorCard from '@/components/AuthorCard';
 
 export const metadata: Metadata = {
-  title: 'RELL SEAS Build Planner & Stat Calculator (September 2026) | Roblox',
+  title: 'RELL SEAS Build Planner & Stat Calculator | Roblox',
   description: 'Interactive RELL SEAS Stat Point Planner. Theorycraft Level 1 to 1000 builds, calculate Fruit DPS, Max HP, Stamina, and Haki armor reduction for PvP and Raids.',
   alternates: {
     canonical: '/build-planner',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'rell seas stat distribution'
   ],
   openGraph: {
-    title: 'RELL SEAS Build Planner & Stat Calculator (September 2026)',
+    title: 'RELL SEAS Build Planner & Stat Calculator ',
     description: 'Optimize your RELL SEAS stats from Level 1 to 1000. Real-time DPS, Max HP, and Haki reduction calculations.',
     type: 'website',
     url: 'https://rellseas.robloxwikihub.com/build-planner',
@@ -95,7 +95,7 @@ export default function BuildPlannerPage() {
         </div>
         <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/50 text-cyan-300 text-xs font-semibold">
           <Sliders className="w-3.5 h-3.5" />
-          <span>REAL-TIME STAT SIMULATOR (SEPTEMBER 2026)</span>
+          <span>REAL-TIME STAT SIMULATOR </span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
           RELL SEAS Build Planner & Stat Calculator
@@ -114,7 +114,6 @@ export default function BuildPlannerPage() {
         role="RELL SEAS Combat Mechanics & Math Analyst"
         experience="500+ Hours Beta Testing & Frame Data Verification"
         patchVersion="Season 1 Combat Balancing"
-        lastUpdated="September 2026"
         editorialNote="All damage multipliers, HP scaling coefficients, and stamina consumption values are derived from live private server combat dummy tests and verified patch data tables."
       />
 

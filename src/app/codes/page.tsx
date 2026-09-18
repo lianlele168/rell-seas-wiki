@@ -4,8 +4,8 @@ import { ACTIVE_CODES, EXPIRED_CODES, FAQ_ITEMS, HOWTO_STEPS } from '@/data/wiki
 import StructuredData from '@/components/StructuredData';
 
 export const metadata = {
-  title: 'RELL SEAS Codes (September 2026) - Free Spins & Beli Boosts',
-  description: 'Full list of active RELL SEAS codes for September 2026. Redeem free Devil Fruit spins, Beli boosts, and stat resets.',
+  title: 'RELL SEAS Codes - Free Spins & Beli Boosts',
+  description: 'Full list of active RELL SEAS codes for . Redeem free Devil Fruit spins, Beli boosts, and stat resets.',
   alternates: {
     canonical: '/codes',
   },
@@ -29,7 +29,7 @@ export default function CodesPage() {
           <span>Updated Daily for RELL SEAS Launch</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Roblox RELL SEAS Codes (September 2026)
+          Roblox RELL SEAS Codes 
         </h1>
         <p className="text-gray-400 text-sm mt-2">
           Redeem these official promo codes from RELL Games for free Devil Fruit Spins, Beli Boosts, Stat Resets, and EXP boosts!
