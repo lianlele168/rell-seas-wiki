@@ -30,6 +30,7 @@ export const Footer = () => {
         <div className="mt-8 pt-6 border-t border-cyan-900/20 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
           <p>© 2026 RELL SEAS Wiki. Not affiliated with RELL Games or Roblox Corporation.</p>
           <p className="mt-2 sm:mt-0">Codes listed once officially confirmed</p>
+          <p className="mt-1 w-full text-center sm:text-left">Content AI-assisted, human-reviewed · Data sources cited on page · Contact: lianlele168@gmail.com</p>
         </div>
       </div>
     </footer>

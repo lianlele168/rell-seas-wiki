@@ -110,9 +110,9 @@ export default function BuildPlannerPage() {
 
       {/* E-E-A-T Author Card */}
       <AuthorCard
-        authorName="Roblox Wiki Hub Research Desk"
-        role="RELL SEAS Combat Mechanics & Math Analyst"
-        experience="500+ Hours Beta Testing & Frame Data Verification"
+        authorName="Hlele"
+        role="Editor"
+        experience="AI-assisted research, human-reviewed"
         patchVersion="Season 1 Combat Balancing"
         editorialNote="All damage multipliers, HP scaling coefficients, and stamina consumption values are derived from live private server combat dummy tests and verified patch data tables."
       />

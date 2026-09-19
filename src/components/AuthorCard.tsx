@@ -10,9 +10,9 @@ interface AuthorCardProps {
 }
 
 export default function AuthorCard({
-  authorName = 'Captain "Redhair" Miller',
-  role = 'Lead Grand Line Navigator & RELL SEAS Theorycrafter',
-  experience = '400+ Hours In-Game & Closed Beta Tester',
+  authorName = 'Hlele',
+  role = 'Editor',
+  experience = 'AI-assisted research, human-reviewed',
   patchVersion = 'Pre-Launch Public Build Verified',
   lastUpdated = '',
   editorialNote = 'All island coordinates, Devil Fruit drop mechanics, Haki quest steps, and ship durability formulas have been tested and verified across live test realms.',

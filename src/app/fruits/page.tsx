@@ -68,9 +68,9 @@ export default function FruitsPage() {
 
       {/* E-E-A-T Author Card */}
       <AuthorCard
-        authorName="Roblox Wiki Hub Research Desk"
-        role="RELL SEAS Devil Fruit Mastery Researcher"
-        experience="400+ Hours Playtesting & Drop Rate Logging"
+        authorName="Hlele"
+        role="Editor"
+        experience="AI-assisted research, human-reviewed"
         patchVersion="Season 1 Balance Patch"
         editorialNote="All fruit drop rates, damage scalings, and skill masteries are collected from live test realms and verified through server-side drop rate inspections."
       />

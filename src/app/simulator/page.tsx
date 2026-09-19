@@ -64,9 +64,9 @@ export default function SimulatorPage() {
 
       {/* E-E-A-T Author Card */}
       <AuthorCard
-        authorName="Roblox Wiki Hub Research Desk"
-        role="Gacha Rate Mathematician & Drop Logger"
-        experience="1,000+ Verified Simulated Spins & Pity Log Analysis"
+        authorName="Hlele"
+        role="Editor"
+        experience="AI-assisted research, human-reviewed"
         patchVersion="Season 1 Launch Odds"
         editorialNote="Drop probabilities are verified against RELL Games public disclosure tables: Mythical 0.5%, Legendary 2.0%, Rare 5.0%, Uncommon 22.5%, Common 70.0% with escalating pity starting at spin 74."
       />
