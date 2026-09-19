@@ -227,7 +227,7 @@ export default function HomePage() {
             </div>
             <div>
               <h2 className="text-xl font-bold text-white">Active Working Codes </h2>
-              <p className="text-xs text-gray-400">Tested and verified daily</p>
+              <p className="text-xs text-gray-400">We list codes only when officially confirmed</p>
             </div>
           </div>
           <Link href="/codes" className="text-xs font-bold text-yellow-400 hover:underline flex items-center gap-1">

@@ -241,46 +241,14 @@ export const ISLANDS: IslandData[] = [
   }
 ];
 
-export const ACTIVE_CODES: CodeItem[] = [
-  {
-    code: "RELL_SEAS_RELEASE_SOON",
-    rewards: "100 Devil Fruit Spins, 50 Beli Boosts, 2 Hours Double EXP",
-    status: "active",
-    addedDate: ""
-  },
-  {
-    code: "SHINDO_TO_RELLSEAS",
-    rewards: "50 Race Rerolls, 25 Stat Resets, 10,000 Beli",
-    status: "active",
-    addedDate: ""
-  },
-  {
-    code: "FIRST_SEA_EXPLORER",
-    rewards: "30 Devil Fruit Spins, Boat Speed Boost",
-    status: "active",
-    addedDate: ""
-  },
-  {
-    code: "CONQUEROR_HAKI_BOOST",
-    rewards: "15 Clan Spins, 5,000 Beli",
-    status: "active",
-    addedDate: ""
-  }
-];
+export const ACTIVE_CODES: CodeItem[] = [];
 
-export const EXPIRED_CODES: CodeItem[] = [
-  {
-    code: "BETA_TEST_RELL_2025",
-    rewards: "20 Spins",
-    status: "expired",
-    addedDate: ""
-  }
-];
+export const EXPIRED_CODES: CodeItem[] = [];
 
 export const FAQ_ITEMS = [
   {
-    question: "How do I redeem codes in RELL SEAS?",
-    answer: "Launch RELL SEAS on Roblox, press 'M' to open the main menu, select 'Options / Codes', paste an active code into the text field, and press Redeem."
+    question: "Are there any RELL SEAS codes?",
+    answer: "No. RELL Seas has not launched yet, so no codes exist. Any site listing working RELL Seas codes right now is showing invented strings. RELL Games will post codes on its official X account and Discord when the game launches."
   },
   {
     question: "Who is the developer of RELL SEAS?",
