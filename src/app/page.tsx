@@ -19,7 +19,7 @@ import {
 import type { Metadata } from 'next';
 import StructuredData from '@/components/StructuredData';
 import AuthorCard from '@/components/AuthorCard';
-import { GAME_INFO, ACTIVE_CODES, DEVIL_FRUITS, FAQ_ITEMS } from '@/data/wikiData';
+import { GAME_INFO, ACTIVE_CODES, FAQ_ITEMS } from '@/data/wikiData';
 
 export const metadata: Metadata = {
   alternates: {
@@ -39,8 +39,8 @@ export default function HomePage() {
 
             author: {
               '@type': 'Person',
-              name: 'Captain "Redhair" Miller',
-              jobTitle: 'Lead Grand Line Navigator & RELL SEAS Theorycrafter',
+              name: 'Hlele',
+              jobTitle: 'Editor',
             },
             mainEntity: FAQ_ITEMS.map((item) => ({
               '@type': 'Question',
@@ -62,7 +62,7 @@ export default function HomePage() {
             <div className="space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-yellow-950/80 border border-yellow-700/60 text-yellow-300 text-xs font-bold tracking-wide">
                 <Sparkles className="w-4 h-4 text-yellow-400 animate-pulse" />
-                <span>RELL Games Official One Piece RPG Database</span>
+                <span>Unofficial RELL Seas Launch Tracker</span>
               </div>
 
               <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight leading-tight">
@@ -73,7 +73,7 @@ export default function HomePage() {
               </h1>
 
               <p className="text-gray-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                {GAME_INFO.description} Explore interactive tools, test gacha rates, calculate stat builds, and claim verified active codes.
+                {GAME_INFO.description}
               </p>
 
               {/* Action Buttons */}
@@ -109,11 +109,11 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#060e1a] via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-[#060e1a]/90 backdrop-blur-md border border-cyan-800/40 flex items-center justify-between">
                   <div>
-                    <span className="text-[10px] uppercase font-bold text-yellow-400 block font-mono">First Sea Realm</span>
-                    <p className="text-sm font-bold text-white">Interactive Island Map & Boss Spawns</p>
+                    <span className="text-[10px] uppercase font-bold text-yellow-400 block font-mono">Launch Status</span>
+                    <p className="text-sm font-bold text-white">Unreleased — see what is confirmed</p>
                   </div>
                   <Link href="/map" className="px-3 py-1.5 rounded-xl bg-yellow-500 text-slate-950 font-bold text-xs">
-                    Explore Map
+                    Map Status
                   </Link>
                 </div>
               </div>
@@ -125,9 +125,9 @@ export default function HomePage() {
       {/* Interactive Tools Showcase */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">Interactive Gamer Utilities</h2>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">RELL SEAS Trackers</h2>
           <p className="text-xs sm:text-sm text-gray-400">
-            Powered by real game mechanics data to maximize your gameplay efficiency.
+            Each page states what is confirmed and stays empty where RELL Games has published nothing.
           </p>
         </div>
 
@@ -144,7 +144,7 @@ export default function HomePage() {
                 Fruit Gacha Sim
               </h3>
               <p className="text-xs text-gray-400 mt-1">
-                Spin 100+ fruits. Test gacha odds for Mochi & Dragon Fruit.
+                Simulator offline until RELL Games publishes real drop rates.
               </p>
             </div>
             <div className="text-xs font-bold text-yellow-400 flex items-center gap-1">
@@ -165,7 +165,7 @@ export default function HomePage() {
                 Stat Build Planner
               </h3>
               <p className="text-xs text-gray-400 mt-1">
-                Allocate Level 1-1000 stats into Fruit, Sword, HP, and Haki.
+                No stat values published yet — see what is confirmed instead.
               </p>
             </div>
             <div className="text-xs font-bold text-cyan-400 flex items-center gap-1">
@@ -186,7 +186,7 @@ export default function HomePage() {
                 Fruit Skill Moveset
               </h3>
               <p className="text-xs text-gray-400 mt-1">
-                Visual cards for Z, X, C, V, F skills and mastery requirements.
+                No fruit has been confirmed — tracker only until launch.
               </p>
             </div>
             <div className="text-xs font-bold text-amber-400 flex items-center gap-1">
@@ -207,7 +207,7 @@ export default function HomePage() {
                 Sea Map & Bosses
               </h3>
               <p className="text-xs text-gray-400 mt-1">
-                First Sea island levels, boss drops, and sailing speed guides.
+                No islands or bosses revealed — nothing to map yet.
               </p>
             </div>
             <div className="text-xs font-bold text-emerald-400 flex items-center gap-1">
@@ -264,7 +264,7 @@ export default function HomePage() {
         <div className="p-8 rounded-3xl bg-[#091527] border border-cyan-900/40 space-y-6">
           <h2 className="text-xl font-bold text-white flex items-center gap-2">
             <Anchor className="w-5 h-5 text-cyan-400" />
-            RELL SEAS Technical Specifications & Data
+            RELL SEAS Confirmed Facts & Launch Status
           </h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">

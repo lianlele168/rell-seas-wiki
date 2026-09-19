@@ -5,9 +5,16 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://rellseas.robloxwikihub.com'),
-  title: 'RELL SEAS Codes & Devil Fruit Tier List - Roblox Wiki',
-  description: 'Find active RELL SEAS codes, Devil Fruit tier lists (Logia, Paramecia, Zoan), Haki unlock guides, and beginner tips for Roblox RELL SEAS.',
-  keywords: ['RELL SEAS codes', 'RELL SEAS tier list', 'Roblox RELL SEAS', 'RELL Games One Piece', 'Mochi Mochi Fruit RELL SEAS'],
+  title: 'RELL SEAS: Release Status, Codes & Pre-Launch Guide',
+  description:
+    'RELL Seas has not launched publicly. Track release status and code availability, see what RELL Games has confirmed, and read why no fruit tier list or island map exists yet.',
+  keywords: [
+    'RELL SEAS release date',
+    'RELL SEAS codes',
+    'RELL SEAS status',
+    'RELL Games One Piece Roblox',
+    'RELL SEAS fruits',
+  ],
   robots: {
     index: true,
     follow: true,
@@ -16,8 +23,9 @@ export const metadata: Metadata = {
     icon: '/favicon.svg',
   },
   openGraph: {
-    title: 'RELL SEAS Codes & Devil Fruit Tier List ',
-    description: 'Get free Spins, Beli, and Stat Resets in Roblox RELL SEAS with daily updated codes.',
+    title: 'RELL SEAS: Release Status, Codes & Pre-Launch Guide',
+    description:
+      'RELL Seas is still in private Wave 1 testing. Track launch status and codes, and see what has actually been confirmed.',
     type: 'website',
     url: 'https://rellseas.robloxwikihub.com',
   },

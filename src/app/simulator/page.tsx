@@ -1,110 +1,136 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Sparkles, Dices, BookOpen, ShieldCheck } from 'lucide-react';
-import SimulatorClient from './SimulatorClient';
+import { Dices, Calendar } from 'lucide-react';
 import AuthorCard from '@/components/AuthorCard';
 
 export const metadata: Metadata = {
-  title: 'RELL SEAS Devil Fruit Gacha Simulator & Spin Rates | Roblox',
-  description: 'Test your luck with the RELL SEAS Devil Fruit Spin Simulator. Real gacha odds (0.5% Mythical, 2% Legendary, 90-spin pity counter) with sound effects and batch rolls.',
+  title: 'RELL SEAS Fruit Gacha Simulator: No Odds Published Yet',
+  description:
+    'RELL Seas has no public gacha odds, so a fruit roll simulator cannot replicate anything. What is actually known about the roll system.',
   alternates: {
     canonical: '/simulator',
   },
   keywords: [
-    'rell seas simulator',
-    'rell seas fruit gacha',
-    'rell seas spin simulator',
+    'rell seas gacha',
+    'rell seas fruit rolls',
+    'rell seas spin rates',
     'rell seas pity system',
-    'rell seas roll rates',
-    'rell seas free spins'
   ],
 };
 
 export default function SimulatorPage() {
-  const jsonLd = {
+  const faqSchema = {
     '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: 'RELL SEAS Fruit Gacha Simulator',
-    url: 'https://rellseas.robloxwikihub.com/simulator',
-    applicationCategory: 'GameApplication',
-    operatingSystem: 'Any',
-    browserRequirements: 'Requires JavaScript and Web Audio',
-    description: 'Free interactive fruit roll simulator replicating RELL SEAS drop chances and 90-spin pity mechanic.',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Are the RELL Seas gacha odds known?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'No. RELL Seas has never been publicly playable, so RELL Games has published no rarity bands, drop percentages or pity thresholds. Any simulator quoting exact odds such as 0.5% Mythical or a 90-spin pity counter is using invented numbers.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Will RELL Seas have a fruit roll system?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Fruits are described as a core progression system and community discussion centres on rolling and trading them, but RELL Games has not published how rolls are earned, what the rarity tiers are, or whether a pity system exists.',
+        },
+      },
+    ],
   };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* Header & Breadcrumb */}
       <div className="border-b border-cyan-900/30 pb-6 text-center sm:text-left space-y-3">
         <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-xs text-gray-400 font-mono">
-          <Link href="/" className="hover:text-cyan-400 transition-colors">Home</Link>
+          <Link href="/" className="hover:text-cyan-400 transition-colors">
+            Home
+          </Link>
           <span>/</span>
           <span className="text-yellow-400 font-semibold">Gacha Simulator</span>
         </div>
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-yellow-950/60 border border-yellow-800/50 text-yellow-300 text-xs font-semibold">
-          <Dices className="w-3.5 h-3.5" />
-          <span>OFFICIAL DROP RATE REPLICA </span>
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-950/60 border border-amber-800/50 text-amber-300 text-xs font-semibold">
+          <Calendar className="w-3.5 h-3.5" />
+          <span>NO ODDS PUBLISHED — SIMULATOR OFFLINE</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-          RELL SEAS Devil Fruit Gacha Simulator
+          RELL SEAS Fruit Gacha Simulator
         </h1>
         <p className="text-gray-300 text-sm sm:text-base max-w-3xl leading-relaxed">
-          Simulate unlimited Devil Fruit spins before spending Robux or earned Beli in-game. Test the 90-spin soft pity counter, track your inventory, and experience interactive meteor drop animations.
+          There is nothing to simulate. RELL Games has never published rarity bands, drop
+          percentages or a pity threshold, so any roll simulator for this game is demonstrating
+          numbers it made up.
         </p>
       </div>
 
-      {/* Interactive Simulator Client */}
-      <SimulatorClient />
-
-      {/* E-E-A-T Author Card */}
       <AuthorCard
         authorName="Hlele"
         role="Editor"
         experience="AI-assisted research, human-reviewed"
-        patchVersion="Season 1 Launch Odds"
-        editorialNote="Drop probabilities are verified against RELL Games public disclosure tables: Mythical 0.5%, Legendary 2.0%, Rare 5.0%, Uncommon 22.5%, Common 70.0% with escalating pity starting at spin 74."
+        patchVersion="Pre-launch"
+        editorialNote="RELL Games has published no drop-rate disclosure table, rarity bands or pity values. This page therefore reports no odds. The simulator is switched off until real values exist to reproduce."
       />
 
-      {/* Gacha Math & Pity Explanation */}
-      <section className="rounded-2xl border border-cyan-900/40 bg-[#07111e] p-6 sm:p-10 space-y-8 text-gray-300">
-        <div className="border-b border-cyan-900/30 pb-4">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
-            <BookOpen className="w-7 h-7 text-yellow-400" />
-            <span>How the RELL SEAS Pity & Reroll System Works</span>
-          </h2>
-          <p className="text-xs sm:text-sm text-gray-400 mt-1">
-            Official odds breakdown, pity threshold formulas, and how to maximize free spins.
+      <div className="rounded-2xl border border-amber-900/40 bg-amber-950/20 p-6 space-y-3">
+        <h2 className="text-lg font-bold text-white flex items-center gap-2">
+          <Dices className="w-4 h-4 text-amber-400" /> Why the simulator is switched off
+        </h2>
+        <p className="text-sm text-gray-300 leading-relaxed">
+          A drop-rate simulator only means something if the rates are real. Ours previously used
+          0.5% Mythical, 2% Legendary and a 90-spin pity counter — figures that looked precise and
+          were invented. A working spinner makes invented odds feel measured, which is exactly the
+          problem: the interface lends the numbers credibility they have not earned.
+        </p>
+        <p className="text-sm text-gray-300 leading-relaxed">
+          Until RELL Games publishes actual roll data, the honest version of this page is an empty
+          one.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        <section className="rounded-2xl border border-cyan-900/40 bg-[#091527] p-6 space-y-3">
+          <h2 className="text-lg font-bold text-white">What suggests a roll system exists</h2>
+          <ul className="text-sm text-gray-300 space-y-2 list-disc pl-5">
+            <li>Fruits are described as central to combat and build identity</li>
+            <li>Fruit trading and rerolling are core to the One Piece genre</li>
+            <li>Community discussion focuses heavily on fruit acquisition</li>
+          </ul>
+          <p className="text-xs text-gray-500 pt-1">
+            None of this is confirmation of specific mechanics — RELL Games has not detailed them.
           </p>
-        </div>
+        </section>
 
-        <div className="grid md:grid-cols-2 gap-6 text-sm leading-relaxed">
-          <div className="p-5 rounded-xl bg-[#040a14] border border-cyan-900/30 space-y-2">
-            <h3 className="font-bold text-white text-base text-yellow-300 flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-yellow-400" />
-              Soft Pity Scaling (Spins 74–90)
-            </h3>
-            <p className="text-gray-300 text-xs sm:text-sm">
-              Base Mythical chance begins at 0.5%. If a Mythical fruit is not obtained by spin 73, soft pity activates on spin 74, increasing your Mythical chance by +6.0% per roll until reaching a guaranteed 100% chance at roll 90.
-            </p>
-          </div>
+        <section className="rounded-2xl border border-cyan-900/40 bg-[#091527] p-6 space-y-3">
+          <h2 className="text-lg font-bold text-white">Not published</h2>
+          <ul className="text-sm text-gray-300 space-y-2 list-disc pl-5">
+            <li>Rarity tiers and their names</li>
+            <li>Any drop percentage</li>
+            <li>Pity or guaranteed-roll thresholds</li>
+            <li>How rolls are earned — currency, codes or gamepasses</li>
+          </ul>
+        </section>
+      </div>
 
-          <div className="p-5 rounded-xl bg-[#040a14] border border-cyan-900/30 space-y-2">
-            <h3 className="font-bold text-white text-base text-cyan-300 flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-cyan-400" />
-              Free Spin Accumulation
-            </h3>
-            <p className="text-gray-300 text-xs sm:text-sm">
-              Do not spend Robux on individual spins. Daily login streaks, defeating Sea Beast world bosses in Calm Belt raids, and redeeming active developer codes award free spins that count toward the permanent pity counter.
-            </p>
-          </div>
-        </div>
-      </section>
+      <p className="text-sm text-gray-400">
+        The{' '}
+        <Link href="/fruits" className="text-cyan-300 underline hover:text-white">
+          fruits page
+        </Link>{' '}
+        covers what is known about the fruit system, and the{' '}
+        <Link href="/codes" className="text-cyan-300 underline hover:text-white">
+          codes page
+        </Link>{' '}
+        tracks launch status. The simulator returns once real odds exist.
+      </p>
     </div>
   );
 }
